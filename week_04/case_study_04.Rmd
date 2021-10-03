@@ -43,8 +43,6 @@ airports %>%
 
 ## Mean Delays
 
-Locations of all airports in the airports table.
-
 ```{r}
 airports_meanDelay <- flights %>%
   group_by(dest) %>%
