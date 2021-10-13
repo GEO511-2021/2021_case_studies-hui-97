@@ -44,7 +44,7 @@ ggplot() +
   theme(legend.position = 'bottom')
 ```
 
-## Hottest Country in Each Continent
+## Hottest Country on Each Continent
 
 ```{r message=FALSE, results='asis'}
 hottest_continents <- tmax_annual_country %>%

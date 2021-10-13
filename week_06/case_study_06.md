@@ -43,7 +43,7 @@ ggplot() +
 
 ![](case_study_06_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-## Hottest Country in Each Continent
+## Hottest Country on Each Continent
 
 ``` r
 hottest_continents <- tmax_annual_country %>%
