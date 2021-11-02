@@ -38,7 +38,7 @@ storm_data <- read_sf(list.files(tdir,pattern=".shp",full.names = T))
 
 ``` r
 storms <- storm_data %>%
-  filter(SEASON > 1950) %>%
+  filter(SEASON >= 1950) %>%
   mutate_if(is.numeric, function(x) ifelse(x==-999.0,NA,x)) %>%
   mutate(decade=(floor(year/10)*10))
 
@@ -78,8 +78,8 @@ storm_states %>%
 
 | state          | storms |
 | :------------- | -----: |
-| Florida        |     81 |
+| Florida        |     84 |
 | North Carolina |     64 |
-| Georgia        |     57 |
+| Georgia        |     60 |
 | Texas          |     54 |
 | Louisiana      |     52 |

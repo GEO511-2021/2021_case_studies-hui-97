@@ -34,7 +34,7 @@ storm_data <- read_sf(list.files(tdir,pattern=".shp",full.names = T))
 
 ```{r, message=FALSE}
 storms <- storm_data %>%
-  filter(SEASON > 1950) %>%
+  filter(SEASON >= 1950) %>%
   mutate_if(is.numeric, function(x) ifelse(x==-999.0,NA,x)) %>%
   mutate(decade=(floor(year/10)*10))
 
