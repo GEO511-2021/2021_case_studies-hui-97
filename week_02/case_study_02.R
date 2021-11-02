@@ -27,4 +27,4 @@ p <- ggplot(data = temp)+aes(x=YEAR, y=JJA)+geom_line(na.rm=TRUE)+labs(subtitle 
 print(p)
 
 # Save the plot to the working directory
-ggsave('JJA_temp.jpeg')
+# ggsave('JJA_temp.jpeg')
