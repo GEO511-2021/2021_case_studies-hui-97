@@ -1,7 +1,7 @@
 # Repository to hold class activities for GEO511
 
 ## Overview
-This template repository is set up to hold the semester's case study assignments for GEO511. 
+This template repository is set up to hold the Fall 2021 semester's case study assignments for GEO511. 
 
 ## Recommendations
 

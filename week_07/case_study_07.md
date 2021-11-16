@@ -1,14 +1,11 @@
----
-title: "Case Study 07"
-author: Hui Gao
-date: October 19, 2021
-output: github_document
----
-
+Case Study 07
+================
+Hui Gao
+October 19, 2021
 
 ## Reproducible example
 
-```{r eval=FALSE}
+``` r
 library(reprex)
 library(styler)
 library(tidyverse)

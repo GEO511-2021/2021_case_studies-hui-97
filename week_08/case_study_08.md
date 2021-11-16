@@ -1,17 +1,11 @@
----
-title: "Case Study 08"
-author: "Hui Gao"
-date: October 25, 2021
-output:
-  html_document: default
-  github_document: default
-  powerpoint_presentation: default
-  word_document: default
----
+Case Study 08
+================
+Hui Gao
+October 25, 2021
 
 ## Load libraries
 
-```{r, message=FALSE}
+``` r
 library(tidyverse)
 library(knitr)
 library(kableExtra)
@@ -19,7 +13,7 @@ library(kableExtra)
 
 ## Read data
 
-```{r, message=FALSE}
+``` r
 data <- read_table("ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt", 
                    skip = 57, 
                    col_names = c("year", "mean", "unc"))
@@ -27,16 +21,19 @@ data <- read_table("ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo
 
 ## Plot
 
-```{r, message=FALSE}
+``` r
 ggplot(data, aes(year, mean)) +
   geom_line(color = 'red') +
   # geom_ribbon(aes(ymin=mean-unc, ymax=mean+unc), color = "grey", alpha = .1) +
   theme_bw()
+```
 
+![](case_study_08_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+``` r
 data %>% 
   kable() %>% 
   as_image(width = 10,file = "table.png")
 ```
 
-
-
+<img src="table.png" width="960" />

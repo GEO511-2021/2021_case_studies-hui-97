@@ -1,13 +1,11 @@
----
-title: "Case Study 06"
-author: Hui Gao
-date: October 12, 2021
-output: github_document
----
+Case Study 06
+================
+Hui Gao
+October 12, 2021
 
 ## Load Packages
 
-```{r message=FALSE}
+``` r
 library(raster)
 library(sp)
 library(spData)
@@ -18,15 +16,14 @@ library(knitr)
 
 ## Load Data
 
-```{r message=FALSE}
+``` r
 data(world)  #load 'world' data from spData package
 tmax_monthly <- getData(name = "worldclim", var="tmax", res=10) #load climate data
-
 ```
 
 ## Maximum Temperature of Each Country
 
-```{r message=FALSE}
+``` r
 world <- world %>%
   filter(!continent=="Antarctica")
 world <- as(world, "Spatial")
@@ -44,9 +41,11 @@ ggplot() +
   theme(legend.position = 'bottom')
 ```
 
+![](case_study_06_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 ## Hottest Country on Each Continent
 
-```{r message=FALSE, results='asis'}
+``` r
 hottest_continents <- tmax_annual_country %>%
   group_by(continent) %>%
   slice_max(tmax, n = 1) %>%
@@ -55,3 +54,13 @@ hottest_continents <- tmax_annual_country %>%
   st_set_geometry(NULL)
 kable(hottest_continents)
 ```
+
+| name\_long                          | continent               | tmax |
+| :---------------------------------- | :---------------------- | ---: |
+| Algeria                             | Africa                  | 48.9 |
+| Iran                                | Asia                    | 46.7 |
+| United States                       | North America           | 44.8 |
+| Australia                           | Oceania                 | 41.8 |
+| Argentina                           | South America           | 36.5 |
+| Spain                               | Europe                  | 36.1 |
+| French Southern and Antarctic Lands | Seven seas (open ocean) | 11.8 |
